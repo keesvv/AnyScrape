@@ -8,6 +8,10 @@ namespace AnyScrape
 {
     public static class Scraper
     {
+        /// <summary>
+        /// Start the scraping process.
+        /// </summary>
+        /// <param name="url">The URI for the <see cref="Scraper"/> to scrape.</param>
         public static void Scrape(string url)
         {
             Color promptColor = Color.Yellow;

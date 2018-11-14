@@ -8,7 +8,10 @@ namespace AnyScrape
 {
     public static class Helper
     {
-        public static Command[] AvailableCommands =
+        /// <summary>
+        /// Returns all available commands.
+        /// </summary>
+        public static Command[] AvailableCommands { get; } =
         {
             new Command()
             {
@@ -38,6 +41,12 @@ namespace AnyScrape
             }
         };
 
+        /// <summary>
+        /// Prompts the user for input.
+        /// </summary>
+        /// <param name="prompt">The custom prompt text to display to the user.</param>
+        /// <param name="color">The color to use for the prompt.</param>
+        /// <returns>User input</returns>
         public static string Prompt(string prompt = "→", Color? color = null)
         {
             if (color == null)
@@ -47,8 +56,12 @@ namespace AnyScrape
             return Console.ReadLine();
         }
 
+        /// <summary>
+        /// Prints the about screen.
+        /// </summary>
         public static void PrintAbout()
         {
+            string a = Prompt("ewfef", null);
             string[] about = {
                 "Welcome to AnyScrape!",
                 "This tool was created by @keesvv",
@@ -68,6 +81,9 @@ namespace AnyScrape
             Console.WriteLine(border);
         }
 
+        /// <summary>
+        /// Prints the predefined hint.
+        /// </summary>
         public static void PrintHint()
         {
             Console.WriteLineFormatted(
@@ -78,6 +94,9 @@ namespace AnyScrape
             Console.WriteLine();
         }
 
+        /// <summary>
+        /// Prints the syntax (a.k.a. help screen).
+        /// </summary>
         public static void PrintSyntax()
         {
             var border = new string('—', Console.BufferWidth - 2);
@@ -109,6 +128,10 @@ namespace AnyScrape
             Console.WriteLine(" " + border, Color.Coral);
         }
 
+        /// <summary>
+        /// Exits the application.
+        /// </summary>
+        /// <param name="code"></param>
         public static void Exit(int code = 0)
         {
             Console.ReplaceAllColorsWithDefaults();

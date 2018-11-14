@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using Console = Colorful.Console;
@@ -8,6 +7,10 @@ namespace AnyScrape
 {
     public static class AnyScrape
     {
+        /// <summary>
+        /// Handles user input, returned by a prompt.
+        /// </summary>
+        /// <param name="input">The user input from the prompt to handle.</param>
         public static void HandleInput(string input)
         {
             string[] rawCommands = Helper.AvailableCommands.Select(i => i.Name).ToArray();
@@ -49,6 +52,10 @@ namespace AnyScrape
             }
         }
 
+        /// <summary>
+        /// Main entry point of AnyScrape.
+        /// </summary>
+        /// <param name="args">The application arguments.</param>
         public static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;
